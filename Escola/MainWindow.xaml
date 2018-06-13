@@ -1,0 +1,45 @@
+﻿<mah:MetroWindow x:Class="Escola.MainWindow"
+                 xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                 xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                 xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+                 xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+                 xmlns:mah="http://metro.mahapps.com/winfx/xaml/controls"
+                 xmlns:iconPacks="http://metro.mahapps.com/winfx/xaml/iconpacks"
+                 mc:Ignorable="d"
+                 Title="Painel Principal" Height="300" Width="500"
+                 ShowCloseButton="False"
+                 ShowMaxRestoreButton="False"
+                 ShowMinButton="False"
+                 Initialized="MainWindow_OnInitialized">
+    <mah:MetroWindow.RightWindowCommands>
+        <mah:WindowCommands>
+            <Button Name="btnFechar" Style="{DynamicResource WhiteButtonTitle}" Content="{iconPacks:Material Power}" Tag="Fechar" Click="BtnFechar_OnClick"></Button>
+        </mah:WindowCommands>
+    </mah:MetroWindow.RightWindowCommands>
+    <Grid>
+        <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
+            <StackPanel>
+                <ItemsControl Focusable="False">
+                    <ItemsControl.ItemsPanel>
+                        <ItemsPanelTemplate>
+                            <StackPanel Orientation="Horizontal"/>
+                        </ItemsPanelTemplate>
+                    </ItemsControl.ItemsPanel>
+                    <ItemsControl Tag="Cadastrar" Padding="0,0,50,0" Focusable="False">
+                        <RadioButton Name="rbCadastrar" Margin="0,0,0,10" Cursor="Hand" Focusable="False">Cadastrar</RadioButton>
+                        <RadioButton Name="rbConsultar" Margin="0,0,0,10" Cursor="Hand" Focusable="False">Consultar</RadioButton>
+                        <RadioButton Name="rbExcluir" Margin="0,0,0,10" Cursor="Hand" Focusable="False">Excluir</RadioButton>
+                    </ItemsControl>
+                    <ItemsControl Tag="Tipo" Padding="0,0,50,0" Focusable="False">
+                        <TextBlock Style="{DynamicResource TextBlockStyle}">Tipo</TextBlock>
+                        <ComboBox Name="cboTipo" Style="{DynamicResource ComboBoxFlatStyle}"></ComboBox>
+                    </ItemsControl>
+                    <ItemsControl Tag="Buttons" Focusable="False">
+                        <Button Name="btnConfirmar" Margin="0,15,0,0" Style="{DynamicResource GreenButton}" Content="{iconPacks:Material CheckboxMarkedCircleOutline}" Tag="Confirmar" Click="BtnConfirmar_OnClick"></Button>
+                    </ItemsControl>
+                </ItemsControl>
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+</mah:MetroWindow>
+
